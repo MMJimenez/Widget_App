@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_app/config/menu/menu_item.dart';
+import 'package:widgets_app/config/nav_helper.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -51,7 +52,12 @@ class _CustomListTile extends StatelessWidget {
       leading: Icon(item.icon, color: colors.primary ),
       trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary ),
       onTap: () {
-        // TODO: navigate
+        // Esta es mi manera propia y no gestiona las URL de web
+        // NavHelper(context).navigateByReference(item.refNavigation);
+
+        // No es la manera recomendada porque no va en web correctamente
+        // Pero si gestiona las URLs
+        Navigator.pushNamed(context, item.link); 
       },
     );
   }
