@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_item.dart';
 import 'package:widgets_app/config/nav_helper.dart';
 
@@ -57,7 +58,9 @@ class _CustomListTile extends StatelessWidget {
 
         // No es la manera recomendada porque no va en web correctamente
         // Pero si gestiona las URLs
-        Navigator.pushNamed(context, item.link); 
+        // Navigator.pushNamed(context, item.link); 
+
+        context.push(item.link);
       },
     );
   }
