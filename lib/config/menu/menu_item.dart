@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_app/config/nav_helper.dart';
+import 'package:widgets_app/presentation/screens/screens.dart';
 
 class MenuItem {
   final String title;
@@ -20,8 +21,8 @@ class MenuItem {
 const appMenuItems = <MenuItem> [
   MenuItem(
     title: 'Botones',
-    subTitle: 'Varios botones en FLutter',
-    link: '/buttons',
+    subTitle: 'Varios botones en Flutter',
+    link: ButtonsScreen.name,
     icon: Icons.smart_button_outlined,
     refNavigation: ScreenReferences.buttons
   ),
@@ -29,7 +30,7 @@ const appMenuItems = <MenuItem> [
   MenuItem(
     title: 'Tarjetas',
     subTitle: 'Un contenedor estilizado',
-    link: '/cards',
+    link: CardsScreen.name,
     icon: Icons.credit_card,
     refNavigation: ScreenReferences.cards
   ),
