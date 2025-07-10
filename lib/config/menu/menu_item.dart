@@ -17,28 +17,16 @@ class MenuItem {
 
 const appMenuItems = <MenuItem> [
   MenuItem(
-    title: 'Botones',
-    subTitle: 'Varios botones en Flutter',
-    link: ButtonsScreen.name,
-    icon: Icons.smart_button_outlined,
-  ),
-  MenuItem(
-    title: 'Tarjetas',
-    subTitle: 'Un contenedor estilizado',
-    link: CardsScreen.name,
-    icon: Icons.credit_card_outlined,
-  ),
-  MenuItem(
     title: 'Animated',
     subTitle: 'Animaciones',
     link: AnimatedScreen.name,
     icon: Icons.animation,
   ),
   MenuItem(
-    title: 'Tutorial',
-    subTitle: 'Un tutorial de la aplicación',
-    link: AppTutorialScreen.name,
-    icon: Icons.book_rounded,
+    title: 'Botones',
+    subTitle: 'Varios botones en Flutter',
+    link: ButtonsScreen.name,
+    icon: Icons.smart_button_outlined,
   ),
   MenuItem(
     title: 'Infinite Scroll',
@@ -57,6 +45,18 @@ const appMenuItems = <MenuItem> [
     subTitle: 'Snackbar',
     link: SnackbarScreen.name,
     icon: Icons.message_rounded,
+  ),
+  MenuItem(
+    title: 'Tarjetas',
+    subTitle: 'Un contenedor estilizado',
+    link: CardsScreen.name,
+    icon: Icons.credit_card_outlined,
+  ),
+  MenuItem(
+    title: 'Tutorial',
+    subTitle: 'Un tutorial de la aplicación',
+    link: AppTutorialScreen.name,
+    icon: Icons.book_rounded,
   ),
   MenuItem(
     title: 'Ui Controls',
