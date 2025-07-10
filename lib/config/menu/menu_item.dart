@@ -17,10 +17,10 @@ class MenuItem {
 
 const appMenuItems = <MenuItem> [
   MenuItem(
-    title: 'Animated',
-    subTitle: 'Animaciones',
+    title: 'Animated Container',
+    subTitle: 'Stateful widget animado',
     link: AnimatedScreen.name,
-    icon: Icons.animation,
+    icon: Icons.check_box_outline_blank_rounded,
   ),
   MenuItem(
     title: 'Botones',
