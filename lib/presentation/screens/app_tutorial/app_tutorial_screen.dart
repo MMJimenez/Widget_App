@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +14,6 @@ class AppTutorialScreen extends StatefulWidget {
 class _AppTutorialScreenState extends State<AppTutorialScreen> {
   final PageController pageViewController = PageController();
   bool endReached = false;
-  bool showButton = false;
   double startButtonOpacity = 0.0;
 
   @override
@@ -26,14 +26,13 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 
       setState(() {
         startButtonOpacity = opacity;
-        showButton = true;
       });
 
-      // if (!endReached && page >= (slides.length - 1.5)) {
-      //   setState(() {
-      //     endReached = true;
-      //   });
-      // }
+      if (!endReached && page >= (slides.length - 1.5)) {
+        setState(() {
+          endReached = true;
+        });
+      }
     });
   }
 
@@ -45,8 +44,8 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final primaryColor = Theme.of(context).colorScheme.primary;
-  
+    final primaryColor = Theme.of(context).colorScheme.tertiary;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -94,8 +93,20 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                       label: Text('Volver'),
                       icon: Icon(Icons.arrow_back),
                     )
-                    : SizedBox()
+                    : SizedBox(),
           ),
+          endReached ? Positioned(
+            bottom: 30,
+            right: 30,
+            child: FadeInRight(
+              from: 15,
+              delay: const Duration(milliseconds: 500),
+              child: FilledButton(
+                onPressed: () => context.pop(),
+                child: const Text('Comenzar'),
+              ),
+            ),
+          ) : SizedBox(),
         ],
       ),
     );
